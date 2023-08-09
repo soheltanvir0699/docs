@@ -1,6 +1,6 @@
----
+
 title: Working with the Docker registry
-intro: '{% ifversion fpt or ghec %}The Docker registry has now been replaced by the {% data variables.product.prodname_container_registry %}.{% else %}You can push and pull your Docker images using the {% data variables.product.prodname_registry %} Docker registry.{% endif %}'
+intro: '{% ifversion fpt or ghec %}The Docker registry is now {% data variables.product.prodname_container_registry %}.{% else %}Use the {% data variables.product.prodname_registry %} Docker registry to manage your Docker images.{% endif %}'
 product: '{% data reusables.gated-features.packages %}'
 redirect_from:
   - /articles/configuring-docker-for-use-with-github-package-registry
@@ -19,17 +19,14 @@ shortTitle: Docker registry
 
 <!-- Main versioning block. Short page for dotcom -->
 {% ifversion fpt or ghec %}
+{% data variables.product.prodname_dotcom %} has transitioned from its Docker registry at `docker.pkg.github.com` to {% data variables.product.prodname_container_registry %} at `https://ghcr.io`. The new registry brings enhanced features like refined permissions and Docker image storage optimizations.
 
-{% data variables.product.prodname_dotcom %}'s Docker registry (which used the namespace `docker.pkg.github.com`) has been replaced by the {% data variables.product.prodname_container_registry %} (which uses the namespace `https://ghcr.io`). The {% data variables.product.prodname_container_registry %} offers benefits such as granular permissions and storage optimizations for Docker images.
-
-Docker images previously stored in the Docker registry are being automatically migrated into the {% data variables.product.prodname_container_registry %}. For more information, see "[AUTOTITLE](/packages/working-with-a-github-packages-registry/migrating-to-the-container-registry-from-the-docker-registry)" and "[AUTOTITLE](/packages/working-with-a-github-packages-registry/working-with-the-container-registry)."
+Existing Docker images from the former registry are automatically migrated to the new {% data variables.product.prodname_container_registry %}. Read more on the migration process and the benefits of the new registry in our documentation. see "[AUTOTITLE](/packages/working-with-a-github-packages-registry/migrating-to-the-container-registry-from-the-docker-registry)" and "[AUTOTITLE](/packages/working-with-a-github-packages-registry/working-with-the-container-registry)."
 
 {% else %}
 <!-- The remainder of this article is displayed for releases that don't support the Container registry -->
-
 {% data reusables.package_registry.packages-ghes-release-stage %}
 {% data reusables.package_registry.packages-ghae-release-stage %}
-
 {% data reusables.package_registry.admins-can-configure-package-types %}
 
 ## About Docker support
